@@ -1,0 +1,47 @@
+# No bell at all
+  vbell off                                # default: off
+  vbell_msg "   -- Ring, Ring!! --   "        # default: "Wuff,Wuff!!"
+
+# Automatically detach on hangup.
+  autodetach on                                # default: on
+
+# Don't display the copyright page
+  startup_message off                        # default: on
+
+# Affects the copying of text regions
+  crlf off                                # default: off
+
+# Change default scrollback value for new windows
+  defscrollback 9000                        # default: 100
+
+# Define the time that all windows monitored for silence should
+# wait before displaying a message. Default 30 seconds.
+  silencewait 15                        # default: 30
+
+  shell /bin/bash
+
+# emulate .logout message
+  pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# Pretty status bar at the bottom.
+caption always "%m/%d/%y %0c%{=b kg}  %l  %{=r gk}%-w%{=b wb}%50>%n%f* %t%{-}%+Lw%<%{- Wk}"
+
+
+# special xterm hardstatus: use the window title.
+#  termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+# alt p : previous
+#bindkey ^[p prev
+bindkey ~p prev
+# alt n : next
+#bindkey ^[N next
+bindkey ~n next
+# alt c : spawn a new shell
+#bindkey ^[C screen
+bindkey ~c screen
+
+#bindkey ^[D detach
+bindkey ~d detach
+
+# scrollback
+termcapinfo xterm* ti@:te@
